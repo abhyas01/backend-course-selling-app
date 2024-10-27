@@ -1,4 +1,4 @@
-const { express, mongoose, cors, MONGO_URL } = require('./config');
+const { express, mongoose, cors, MONGO_URL, PORT } = require('./config');
 const { userRouter } = require('./routes/users');
 const { adminRouter } = require('./routes/admin');
 
@@ -15,8 +15,8 @@ app.use('/api/v1/admin', adminRouter);
   try {
     await mongoose.connect(MONGO_URL);
     console.log('Connected to Database');
-    app.listen(3000, () => {
-      console.log('Server listening on port 3000');
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
     });
   } catch (err) {
     console.error('Database connection failed:', err);

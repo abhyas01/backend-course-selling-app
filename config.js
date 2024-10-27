@@ -11,6 +11,7 @@ const JWT_SECRET_USER = process.env.JWT_SECRET_USER;
 const JWT_SECRET_ADMIN = process.env.JWT_SECRET_ADMIN;
 const JWT_EXPIRY_USER = process.env.JWT_EXPIRY_USER;
 const JWT_EXPIRY_ADMIN = process.env.JWT_EXPIRY_ADMIN;
+const PORT = 3000;
 
 module.exports = {
   express,
@@ -23,5 +24,6 @@ module.exports = {
   JWT_SECRET_ADMIN,
   JWT_EXPIRY_USER,
   JWT_EXPIRY_ADMIN,
-  bcrypt
+  bcrypt,
+  PORT
 };

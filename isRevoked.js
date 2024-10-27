@@ -2,7 +2,7 @@ const { RevokedTokens } = require('./db-store/db');
 
 async function revokeToken(token, userId, userType) {
   try{
-    const tokenExpiry = userType === 'Admin' ? 86400 : 2160000;
+    const tokenExpiry = userType === 'Admin' ? 86400 : 604800;
     const expiryDate = new Date(Date.now() + tokenExpiry * 1000);
     let revokedTokenDoc = await RevokedTokens.findOne({
       userId: userId,
