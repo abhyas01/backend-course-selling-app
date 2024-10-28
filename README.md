@@ -1,4 +1,4 @@
-# Course Selling App
+# Course Selling App --Backend
 
 This is a backend application for a course selling platform. It provides APIs for user and admin authentication, course management, and user course purchases.
 
