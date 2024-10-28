@@ -214,6 +214,9 @@ adminRouter.get('/my-courses', adminMiddleware, async (req, res) => {
     });
     const courses = await Course.find({
       _id: {$in: adminEntry.courses}
+    }, '-__v -_id').populate({
+      path: 'instructors',
+      select: 'firstName lastName email -_id',
     });
     res.status(200).json({
       courses: courses

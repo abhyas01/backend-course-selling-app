@@ -145,6 +145,9 @@ userRouter.get('/my-courses', userMiddleware, async (req, res) => {
     });
     const courses = await Course.find({
       _id: {$in: userEntry.courses}
+    }, '-__v -_id').populate({
+      path: 'instructors',
+      select: "firstName lastName email -_id"
     });
     res.status(200).json({
       courses: courses
